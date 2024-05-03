@@ -15,8 +15,8 @@ class RegisterController extends BaseController
      *     path="/api/register",
      *     operationId="registerUser",
      *     tags={"Register"},
-     *     summary="Login a user",
-     *     description="User Login Endpoint",
+     *     summary="registre a user",
+     *     description="User register Endpoint",
      *     @OA\RequestBody(
      *         @OA\JsonContent(),
      *         @OA\MediaType(
