@@ -11,7 +11,22 @@ class ProductController extends BaseController
 {
   
    
-  
+  /**
+     * @OA\Get(
+     *     path="/api/products",
+     *     operationId="GetProducts",
+     *     tags={"Products"},
+     *     summary="get products all",
+     *     description="Get all products Endpoint",
+     *     
+     *     @OA\Response(
+     *         response="201",
+     *         description="User Register Successfully",
+     *         @OA\JsonContent()
+     *     ),
+     *    
+     * )
+     */
         
     public function index()
     {

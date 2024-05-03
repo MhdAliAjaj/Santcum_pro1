@@ -5,6 +5,26 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/api/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "get products all",
+                "description": "Get all products Endpoint",
+                "operationId": "GetProducts",
+                "responses": {
+                    "201": {
+                        "description": "User Register Successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/register": {
             "post": {
                 "tags": [
