@@ -6,21 +6,21 @@ use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\RegisterController;
 
 
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-
 Route::controller(RegisterController::class)->group(function(){
-    Route::post('register', 'register');
-    Route::post('login', 'login');
-    Route::post('logout', 'logout');
-});
-        
-// Route::middleware('auth:sanctum')->group( function () {
-//     Route::apiResource('products', ProductController::class);
-    
-// });
 
-Route::apiResource('products', ProductController::class)->middleware('auth:sanctum');
+    Route::post('register', [RegisterController::class,'register']);
+    Route::post('login', [RegisterController::class,'login']);
+    
+});
+
+//طريقة انشاء راوتات عن طريق غروب
+Route::middleware('auth:sanctum')->group(function(){
+    Route::post('logout', [RegisterController::class, 'logout'])->middleware('auth:sanctum');
+    Route::apiResource('products', ProductController::class)->middleware('auth:sanctum');
+
+}
+
+);
+//طريقة انشاء راوتات عن طريق الطريقةالتقليدية
+// Route::post('logout', [RegisterController::class, 'logout'])->middleware('auth:sanctum');
+// Route::apiResource('products', ProductController::class)->middleware('auth:sanctum');
